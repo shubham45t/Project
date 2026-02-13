@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Data Manager</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f9;margin:0;padding:20px}
+.container{max-width:900px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+h2{text-align:center}
+input,button{padding:10px;margin:5px;border-radius:8px;border:1px solid #ccc}
+button{cursor:pointer;background:#2563eb;color:white;border:none}
+button:hover{background:#1e40af}
+table{width:100%;border-collapse:collapse;margin-top:20px}
+th,td{padding:10px;border-bottom:1px solid #ddd;text-align:center}
+.delete{background:#ef4444}
+.delete:hover{background:#b91c1c}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Student Data</h2>
+<div>
+<input id="name" placeholder="Name">
+<input id="roll" placeholder="Roll No">
+<input id="course" placeholder="Course">
+<button onclick="addStudent()">Add</button>
+</div>
+<table>
+<thead>
+<tr><th>Name</th><th>Roll</th><th>Course</th><th>Action</th></tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+</div>
+<script>
+let students = JSON.parse(localStorage.getItem('students')) || [];
+function save(){localStorage.setItem('students',JSON.stringify(students));render();}
+function addStudent(){
+ const name=document.getElementById('name').value.trim();
+ const roll=document.getElementById('roll').value.trim();
+ const course=document.getElementById('course').value.trim();
+ if(!name||!roll||!course){alert('Fill all fields');return;}
+ students.push({name,roll,course});
+ document.getElementById('name').value='';
+ document.getElementById('roll').value='';
+ document.getElementById('course').value='';
+ save();
+}
+function del(i){students.splice(i,1);save();}
+function render(){
+ const body=document.getElementById('tableBody');
+ body.innerHTML='';
+ students.forEach((s,i)=>{
+ body.innerHTML+=`<tr><td>${s.name}</td><td>${s.roll}</td><td>${s.course}</td><td><button class="delete" onclick="del(${i})">Delete</button></td></tr>`;
+ });
+}
+render();
+</script>
+</body>
+</html>
