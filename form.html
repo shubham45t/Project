@@ -1,116 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UG Admission Form - KIET Group of Institutions</title>
+    <title>PG College Admission Form</title>
 </head>
 <body>
 
-    <center>
-        <h1>KIET Group of Institutions</h1>
-        <h2>Undergraduate (UG) Admission Form</h2>
-    </center>
+    <h2>Postgraduate (PG) Admission Form</h2>
 
     <form action="#" method="post">
 
-        <fieldset>
-            <legend><b>Personal Details</b></legend>
+        <label>Full Name:</label><br>
+        <input type="text" name="fullname" required><br><br>
 
-            Full Name: <br>
-            <input type="text" name="fullname" required><br><br>
+        <label>Father's Name:</label><br>
+        <input type="text" name="fathername" required><br><br>
 
-            Father's Name: <br>
-            <input type="text" name="fathername" required><br><br>
+        <label>Mother's Name:</label><br>
+        <input type="text" name="mothername" required><br><br>
 
-            Mother's Name: <br>
-            <input type="text" name="mothername" required><br><br>
+        <label>Date of Birth:</label><br>
+        <input type="date" name="dob" required><br><br>
 
-            Date of Birth: <br>
-            <input type="date" name="dob" required><br><br>
-
-            Gender: <br>
-            <input type="radio" name="gender" value="Male"> Male
-            <input type="radio" name="gender" value="Female"> Female
-            <input type="radio" name="gender" value="Other"> Other
-            <br><br>
-
-            Category: <br>
-            <select name="category">
-                <option>General</option>
-                <option>OBC</option>
-                <option>SC</option>
-                <option>ST</option>
-                <option>EWS</option>
-            </select>
-        </fieldset>
-
-        <br>
-
-        <fieldset>
-            <legend><b>Contact Details</b></legend>
-
-            Email: <br>
-            <input type="email" name="email" required><br><br>
-
-            Mobile Number: <br>
-            <input type="tel" name="mobile" required><br><br>
-
-            Address: <br>
-            <textarea name="address" rows="4" cols="40"></textarea>
-        </fieldset>
-
-        <br>
-
-        <fieldset>
-            <legend><b>Academic Details</b></legend>
-
-            10th Board Percentage: <br>
-            <input type="text" name="tenth"><br><br>
-
-            12th Board Percentage: <br>
-            <input type="text" name="twelfth"><br><br>
-
-            Stream in 12th: <br>
-            <select name="stream">
-                <option>Science</option>
-                <option>Commerce</option>
-                <option>Arts</option>
-            </select><br><br>
-
-            Entrance Exam Rank (JEE/Other): <br>
-            <input type="text" name="rank"><br><br>
-
-            Select Course: <br>
-            <select name="course">
-                <option>B.Tech CSE</option>
-                <option>B.Tech IT</option>
-                <option>B.Tech ECE</option>
-                <option>B.Tech ME</option>
-                <option>BBA</option>
-                <option>BCA</option>
-            </select>
-        </fieldset>
-
-        <br>
-
-        <fieldset>
-            <legend><b>Documents Upload</b></legend>
-
-            Upload 10th Marksheet: <br>
-            <input type="file" name="doc1"><br><br>
-
-            Upload 12th Marksheet: <br>
-            <input type="file" name="doc2"><br><br>
-
-            Upload Photo: <br>
-            <input type="file" name="photo">
-        </fieldset>
-
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
         <br><br>
 
-        <center>
-            <input type="submit" value="Submit Application">
-            <input type="reset" value="Reset Form">
-        </center>
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Mobile Number:</label><br>
+        <input type="tel" name="mobile" required><br><br>
+
+        <label>Address:</label><br>
+        <textarea name="address" rows="4" cols="40"></textarea><br><br>
+
+        <label>Graduation Degree:</label><br>
+        <input type="text" name="degree" required><br><br>
+
+        <label>University/College Name:</label><br>
+        <input type="text" name="university" required><br><br>
+
+        <label>Percentage/CGPA:</label><br>
+        <input type="text" name="marks" required><br><br>
+
+        <label>Select PG Course:</label><br>
+        <select name="pgcourse">
+            <option value="MCA">MCA</option>
+            <option value="MBA">MBA</option>
+            <option value="MSc">M.Sc</option>
+            <option value="MA">M.A</option>
+            <option value="MCom">M.Com</option>
+        </select><br><br>
+
+        <label>Upload Graduation Marksheet:</label><br>
+        <input type="file" name="marksheet"><br><br>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset Form">
 
     </form>
 
