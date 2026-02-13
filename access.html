@@ -1,148 +1,61 @@
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { GraduationCap, BookOpen, Users, Mail } from "lucide-react";
-
-export default function CollegeWebsite() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      {/* Navbar */}
-      <motion.nav
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="flex justify-between items-center p-5 backdrop-blur-lg bg-white/5 sticky top-0 z-50"
-      >
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-2xl font-bold tracking-wide"
-        >
-          FutureTech College
-        </motion.h1>
-        <div className="flex gap-6 text-sm">
-          {['Home', 'Programs', 'Campus', 'Admissions', 'Contact'].map((item, i) => (
-            <motion.a
-              key={item}
-              href="#"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="cursor-pointer hover:text-cyan-400"
-            >
-              {item}
-            </motion.a>
-          ))}
-        </div>
-      </motion.nav>
-
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-24">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-        >
-          Shaping Innovators of Tomorrow
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-slate-300 max-w-2xl mb-8"
-        >
-          Experience world-class education, cutting-edge labs, and a vibrant campus life designed to empower future leaders and creators.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6 }}
-          className="flex gap-4"
-        >
-          <Button className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold">
-            Explore Programs
-          </Button>
-          <Button variant="outline" className="border-slate-600 hover:bg-white/10">
-            Virtual Tour
-          </Button>
-        </motion.div>
-      </section>
-
-      {/* Features Section */}
-      <section className="grid md:grid-cols-3 gap-6 px-10 pb-20">
-        {[
-          { icon: GraduationCap, title: 'Top Faculty', desc: 'Learn from industry experts & researchers.' },
-          { icon: BookOpen, title: 'Modern Curriculum', desc: 'Future-focused learning modules.' },
-          { icon: Users, title: 'Student Community', desc: 'Collaborative & innovative culture.' }
-        ].map((feature, i) => (
-          <motion.div
-            key={feature.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-white/5 border-slate-700 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
-              <CardContent className="p-6">
-                <feature.icon className="mb-4 text-cyan-400" size={32} />
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-slate-400 text-sm">{feature.desc}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </section>
-
-      {/* Stats Section */}
-      <section className="flex justify-around text-center py-10 border-t border-slate-700 bg-white/5">
-        {[
-          { value: '10K+', label: 'Students' },
-          { value: '150+', label: 'Faculty' },
-          { value: '98%', label: 'Placements' }
-        ].map((stat, i) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-3xl font-bold text-cyan-400">{stat.value}</h4>
-            <p className="text-slate-400 text-sm">{stat.label}</p>
-          </motion.div>
-        ))}
-      </section>
-
-      {/* Contact Section */}
-      <section className="text-center py-20 px-6">
-        <motion.h3
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl font-bold mb-4"
-        >
-          Get in Touch
-        </motion.h3>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-slate-400 mb-6"
-        >
-          Have questions about admissions or programs? Reach out to us.
-        </motion.p>
-
-        <motion.div whileHover={{ scale: 1.05 }}>
-          <Button className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold">
-            <Mail className="mr-2" size={18} /> Contact Admissions
-          </Button>
-        </motion.div>
-      </section>
-    </div>
-  );
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Data Manager</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f9;margin:0;padding:20px}
+.container{max-width:900px;margin:auto;background:#fff;padding:20px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+h2{text-align:center}
+input,button{padding:10px;margin:5px;border-radius:8px;border:1px solid #ccc}
+button{cursor:pointer;background:#2563eb;color:white;border:none}
+button:hover{background:#1e40af}
+table{width:100%;border-collapse:collapse;margin-top:20px}
+th,td{padding:10px;border-bottom:1px solid #ddd;text-align:center}
+.delete{background:#ef4444}
+.delete:hover{background:#b91c1c}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Student Data</h2>
+<div>
+<input id="name" placeholder="Name">
+<input id="roll" placeholder="Roll No">
+<input id="course" placeholder="Course">
+<button onclick="addStudent()">Add</button>
+</div>
+<table>
+<thead>
+<tr><th>Name</th><th>Roll</th><th>Course</th><th>Action</th></tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+</div>
+<script>
+let students = JSON.parse(localStorage.getItem('students')) || [];
+function save(){localStorage.setItem('students',JSON.stringify(students));render();}
+function addStudent(){
+ const name=document.getElementById('name').value.trim();
+ const roll=document.getElementById('roll').value.trim();
+ const course=document.getElementById('course').value.trim();
+ if(!name||!roll||!course){alert('Fill all fields');return;}
+ students.push({name,roll,course});
+ document.getElementById('name').value='';
+ document.getElementById('roll').value='';
+ document.getElementById('course').value='';
+ save();
 }
+function del(i){students.splice(i,1);save();}
+function render(){
+ const body=document.getElementById('tableBody');
+ body.innerHTML='';
+ students.forEach((s,i)=>{
+ body.innerHTML+=`<tr><td>${s.name}</td><td>${s.roll}</td><td>${s.course}</td><td><button class="delete" onclick="del(${i})">Delete</button></td></tr>`;
+ });
+}
+render();
+</script>
+</body>
+</html>
